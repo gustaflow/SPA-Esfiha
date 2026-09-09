@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&amp;family=Open+Sans:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "primary-fixed-dim": "#ffb94c", "on-secondary-container": "#785515", "surface-variant": "#fbdfae", "on-secondary": "#ffffff", "tertiary-fixed": "#e5e4c7", "inverse-on-surface": "#ffefd6", "tertiary-fixed-dim": "#c8c8ac", "surface-tint": "#815500", "secondary-container": "#fdcd82", "on-primary": "#ffffff", "secondary-fixed-dim": "#eebf75", "on-error": "#ffffff", "primary": "#815500", "secondary-fixed": "#ffdeae", "on-tertiary-fixed": "#1c1d0b", "on-tertiary-fixed-variant": "#474833", "inverse-surface": "#3e2e0c", "surface": "#fff8f2", "surface-container-highest": "#fbdfae", "on-tertiary": "#ffffff", "on-error-container": "#93000a", "outline": "#857560", "on-surface": "#261900", "outline-variant": "#d7c3ac", "on-secondary-fixed": "#281800", "surface-dim": "#f2d6a6", "inverse-primary": "#ffb94c", "error-container": "#ffdad6", "error": "#ba1a1a", "on-background": "#261900", "on-primary-fixed-variant": "#624000", "tertiary-container": "#bbbba0", "secondary": "#7b5818", "primary-container": "#faa901", "surface-container": "#ffebcd", "on-primary-container": "#664200", "on-tertiary-container": "#4a4b35", "on-surface-variant": "#524533", "surface-container-high": "#ffe5b9", "on-secondary-fixed-variant": "#604100", "surface-container-low": "#fff2e0", "primary-fixed": "#ffddb2", "surface-bright": "#fff8f2", "surface-container-lowest": "#ffffff", "tertiary": "#5f6049", "on-primary-fixed": "#291800", "background": "#fff8f2" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "spacing-sm": "0.75rem", "spacing-md": "1rem", "spacing-xs": "0.5rem", "spacing-2xs": "0.25rem", "screen-gutter": "1rem", "touch-target-min": "2.75rem", "spacing-2xl": "2rem", "spacing-xl": "1.5rem", "spacing-lg": "1.25rem" }, "fontFamily": { "body-md": ["Open Sans"], "label-sm": ["Open Sans"], "headline-lg": ["Montserrat"], "display-lg": ["Montserrat"], "label-md": ["Open Sans"], "headline-md": ["Montserrat"], "label-lg": ["Open Sans"], "body-sm": ["Open Sans"], "headline-sm": ["Montserrat"], "body-lg": ["Open Sans"] }, "fontSize": { "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "label-sm": ["10px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700" }], "headline-lg": ["24px", { "lineHeight": "30px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "display-lg": ["32px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "600" }], "headline-md": ["20px", { "lineHeight": "26px", "fontWeight": "600" }], "label-lg": ["14px", { "lineHeight": "18px", "fontWeight": "600" }], "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }] } } } };</script></head><body class="bg-surface font-body-md text-body-md text-on-surface flex flex-col antialiased"><header class="fixed top-0 inset-x-0 z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] pt-safe"><div class="h-16 px-screen-gutter flex items-center justify-between"><div class="flex items-center gap-spacing-xs"><div class="w-10 h-10 rounded-full bg-primary-container/20 flex items-center justify-center text-primary"><span class="material-symbols-outlined">restaurant_menu</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface leading-tight">Lanchonete Esfiha</span><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Cardápio</span></div></div><div class="flex items-center gap-spacing-xs"><a aria-label="Sacola de pedidos" class="relative w-touch-target-min h-touch-target-min rounded-full flex items-center justify-center text-secondary hover:bg-surface-container transition-colors" data-path="carrinho-e-cadastro" href="#"><span class="material-symbols-outlined">shopping_bag</span><span class="absolute top-1.5 right-1.5 min-w-[1.125rem] h-[1.125rem] px-1 rounded-full bg-primary-container text-on-primary-container font-label-sm text-label-sm flex items-center justify-center shadow-[0_2px_6px_rgba(250,169,1,0.4)]">3</span></a><img alt="Profile" class="w-8 h-8 rounded-full object-cover shadow-[0_1px_4px_rgba(0,0,0,0.08)]" src="https://lh3.googleusercontent.com/aida/AEtjO1VsmqAU3EI9xHrnpucHgXzcsMfMQ5IuH2HRKZQ5Vb88NV4VXiCPQq_O6dgkq69Iz4vAezHwzWsIeCoapQIIU3B5-1SWJZmnbNbIyF5-4QIpEQOYuu75eEBPAWC-hKxrQuDyQtxIwGR0hTszg1TpPKbsgDkf-3BLAwVLK_jDZ3ZsHMZYjrG9zJyBzdULTu_JiPGuIvlKiWWVFw1Q6o1dKj4Fw0m9lvyYAgwlMUmUXkNaQMpRVEq14pey-Wq29Y6nzjM8LvXD1NaAiQ"/></div></div></header><main class="flex flex-col relative w-full pt-16 pb-24 bg-surface min-h-screen"><div class="flex flex-col w-full pb-20">
+<!-- Search and Location micro-bar -->
+<div class="px-screen-gutter py-spacing-xs flex items-center gap-spacing-xs">
+<div class="flex-1 flex items-center bg-surface-container-lowest px-spacing-sm py-2.5 rounded-xl shadow-[0_2px_8px_rgba(50,35,3,0.04)]">
+<span class="material-symbols-outlined text-outline text-[20px] mr-2">search</span>
+<input class="bg-transparent text-on-surface font-body-sm text-body-sm w-full outline-none placeholder:text-outline/70" id="menu-search" placeholder="Buscar esfiha quentinha ou bebida..." type="text"/>
+</div>
+<button aria-label="Filtro rápido" class="w-11 h-11 flex items-center justify-center bg-surface-container-low rounded-xl text-primary active:scale-95 transition-transform shadow-[0_2px_6px_rgba(50,35,3,0.04)]" type="button">
+<span class="material-symbols-outlined text-[20px]">tune</span>
+</button>
+</div>
+<!-- Delivery & Store Status Pill -->
+<div class="px-screen-gutter pb-spacing-xs">
+<div class="flex items-center justify-between bg-surface-container-low/80 px-spacing-sm py-2 rounded-lg">
+<div class="flex items-center gap-1.5">
+<span class="inline-block w-2 h-2 rounded-full bg-emerald-600 animate-pulse"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-bold uppercase tracking-wide">Forno a lenha aceso</span>
+</div>
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[15px]">timer</span>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">25-35 min</span>
+</div>
+</div>
+</div>
+<!-- Horizontal Scrollable Category Pills -->
+<div class="w-full overflow-x-auto no-scrollbar py-spacing-2xs px-screen-gutter flex items-center gap-spacing-xs sticky top-16 z-40 bg-surface/95 backdrop-blur-md">
+<button class="category-chip active flex items-center gap-1.5 px-4 h-9 rounded-full bg-primary-container text-on-primary-container font-label-md text-label-md shrink-0 shadow-sm transition-all duration-200" data-category="todas" type="button">
+<span class="material-symbols-outlined text-[18px]">dinner_dining</span>
+<span>Todas</span>
+</button>
+<button class="category-chip flex items-center gap-1.5 px-4 h-9 rounded-full bg-surface-container-lowest text-secondary font-label-md text-label-md shrink-0 shadow-[0_2px_8px_rgba(50,35,3,0.05)] transition-all duration-200" data-category="promocoes" type="button">
+<span class="material-symbols-outlined text-[18px]">local_offer</span>
+<span>Promoções</span>
+</button>
+<button class="category-chip flex items-center gap-1.5 px-4 h-9 rounded-full bg-surface-container-lowest text-secondary font-label-md text-label-md shrink-0 shadow-[0_2px_8px_rgba(50,35,3,0.05)] transition-all duration-200" data-category="salgadas" type="button">
+<span class="material-symbols-outlined text-[18px]">local_pizza</span>
+<span>Salgadas</span>
+</button>
+<button class="category-chip flex items-center gap-1.5 px-4 h-9 rounded-full bg-surface-container-lowest text-secondary font-label-md text-label-md shrink-0 shadow-[0_2px_8px_rgba(50,35,3,0.05)] transition-all duration-200" data-category="doces" type="button">
+<span class="material-symbols-outlined text-[18px]">cookie</span>
+<span>Doces</span>
+</button>
+<button class="category-chip flex items-center gap-1.5 px-4 h-9 rounded-full bg-surface-container-lowest text-secondary font-label-md text-label-md shrink-0 shadow-[0_2px_8px_rgba(50,35,3,0.05)] transition-all duration-200" data-category="bebidas" type="button">
+<span class="material-symbols-outlined text-[18px]">local_drink</span>
+<span>Bebidas</span>
+</button>
+</div>
+<!-- Featured Card (Destaque do Dia) -->
+<div class="px-screen-gutter pt-spacing-sm pb-spacing-xs">
+<div class="relative overflow-hidden rounded-2xl bg-surface-container-low p-spacing-md shadow-[0_4px_16px_rgba(50,35,3,0.08)] flex flex-col justify-between">
+<div class="absolute -right-8 -top-8 w-32 h-32 rounded-full bg-primary-container/20 blur-xl pointer-events-none"></div>
+<div class="flex items-center gap-spacing-xs mb-2">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-primary-container text-on-primary-container font-label-sm text-label-sm font-bold shadow-sm">
+<span class="material-symbols-outlined text-[14px]">local_fire_department</span>
+          FORNADA ESPECIAL
+        </span>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">Só até as 22h</span>
+</div>
+<div class="flex items-center gap-spacing-md">
+<div class="flex-1">
+<h2 class="font-headline-sm text-headline-sm text-on-surface leading-snug">Destaque do Dia</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Mais que uma esfiha, um bom momento. Massa levinha fermentada por 24h e recheio farto.</p>
+<div class="flex items-center gap-2 mt-3">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">R$ 6,50</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant line-through">R$ 8,00</span>
+</div>
+</div>
+<div class="relative w-24 h-24 shrink-0 rounded-xl overflow-hidden shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Close up artisanal open-faced freshly baked meat esfiha with roasted pine nuts, minced beef, caramelized onions, and chopped mint on rustic parchment paper with golden crisp crust in warm ambient restaurant light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGO748z-sHpeS1tvka4J_2D0rNj1zv7cY6nealhMqRYx4kiuyhxurpbDUXmGjje7lVDNMjb6zoBgK9Bu-1WwnuLxO9nFI6x3Z7pzNA1Sjb0J3m1Mbc0Fn4UauV_wG7iSOv3145XyuJe1VNxAKSWpTqJiZcKqtwqqtASIFmcqqNKJpTNilhmR-ltB5aXeQ_8i7kBOH55eFb9-E-ICteBPCiQN6CuwdSFgjLeuv96J3BePQx9JbuhF5e-w"/>
+</div>
+</div>
+<button class="add-btn mt-spacing-sm w-full h-11 bg-primary-container text-on-primary-container font-label-lg text-label-lg rounded-xl flex items-center justify-center gap-2 font-bold active:scale-[0.98] transition-transform shadow-[0_3px_10px_rgba(250,169,1,0.3)]" data-item="Combo Especial do Chefe" data-price="6.50" type="button">
+<span class="material-symbols-outlined text-[18px]">add_circle</span>
+<span>Aproveitar Destaque</span>
+</button>
+</div>
+</div>
+<!-- Menu Section Header -->
+<div class="px-screen-gutter pt-spacing-sm pb-spacing-2xs flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[20px]">restaurant_menu</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface" id="section-title">Cardápio Completo</h3>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-semibold" id="items-count">10 itens</span>
+</div>
+<!-- Products Vertical List -->
+<div class="px-screen-gutter flex flex-col gap-spacing-sm pt-spacing-2xs" id="product-list">
+<!-- Item 1: Esfiha de Carne -->
+<div class="product-card group relative bg-surface-container-lowest p-spacing-sm rounded-xl shadow-[0_2px_8px_rgba(50,35,3,0.06)] flex items-center gap-spacing-sm" data-tags="salgadas todas">
+<div class="relative w-20 h-20 shrink-0 rounded-lg overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Traditional open-faced beef esfiha topped with seasoned minced ground beef, diced tomatoes, onions and lemon slice, baked to golden brown crust on dark warm slate background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0xh-xMkMmy9cMTmtayipH0lepY2LYPaT0SLXQd5TnZZrBIrLQxY83_OYmeIN9gZ1Y8vUzMYYaDXW5lHT3IiM41_kMY0-t6DwcGJ1OmjZyj8LOWLmmEb1QgR3BtLyh7pR__KdZpNOVvJJmpVpjuqYvIsgzRFZfNQwVoxy9_57VW6buU5zKpyK5ZO7BTlMAHLCYmcBfc6U2b6Nn1NnGwW2yLBVi3NwzFaYlGvrtGX66iRAnUCbUApAibA"/>
+<div class="absolute top-1 left-1">
+<span class="bg-primary-container text-on-primary-container font-label-sm text-[9px] font-bold px-1.5 py-0.5 rounded shadow-sm flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[11px]">star</span>
+            TOP
+          </span>
+</div>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-1.5 flex-wrap">
+<h4 class="font-headline-sm text-[15px] leading-tight text-on-surface truncate">Esfiha de Carne</h4>
+<span class="bg-surface-container-high text-on-secondary-container font-label-sm text-[9px] px-1.5 py-0.5 rounded font-bold uppercase">Best-seller</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1 mt-0.5">Carne moída temperada, tomate fresco, cebola e toque de limão.</p>
+<div class="flex items-center justify-between mt-2">
+<span class="font-headline-sm text-[16px] text-on-surface font-bold">R$ 6,50</span>
+<button class="add-btn h-8 px-3 bg-primary-container text-on-primary-container font-label-md text-label-md rounded-lg flex items-center gap-1 font-bold active:scale-95 transition-all shadow-[0_2px_6px_rgba(250,169,1,0.25)]" data-item="Esfiha de Carne" data-price="6.50" type="button">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span>Adicionar</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Item 2: Esfiha de Frango com Catupiry (Promoção) -->
+<div class="product-card group relative bg-surface-container-lowest p-spacing-sm rounded-xl shadow-[0_2px_8px_rgba(50,35,3,0.06)] flex items-center gap-spacing-sm" data-tags="salgadas promocoes todas">
+<div class="relative w-20 h-20 shrink-0 rounded-lg overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Shredded tender chicken breast esfiha with generous creamy dollops of catupiry cheese and golden baked crust fresh from the stone oven" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDE9lVGD7N9bjHQNNLQesWwn4jEXB3rBsaFtEuamZj2_f5IKlkZjwq9STAst4D3E6-6zyiTAEDCRdyhehX35Rg_gnxdtVfOT-gVrdblniAYkSu_dAO86_PVHxRll2ZeumCsOUFH6OP5yTzK29giIJ8YbTVIG4bDkrDwDlCzqM98uojQnWzMjNS8MMf3VHR5MRnQ4pZjyn9Bqu8WnB9dA99bXJ3_0zgCNx9_U4Rb5JVigxOw84MJMDUJDA"/>
+<div class="absolute top-1 left-1">
+<span class="bg-error text-on-error font-label-sm text-[9px] font-bold px-1.5 py-0.5 rounded shadow-sm flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[11px]">percent</span>
+            OFF
+          </span>
+</div>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-1.5 flex-wrap">
+<h4 class="font-headline-sm text-[15px] leading-tight text-on-surface truncate">Esfiha de Frango c/ Catupiry</h4>
+<span class="bg-error-container text-on-error-container font-label-sm text-[9px] px-1.5 py-0.5 rounded font-bold uppercase">PROMOÇÃO</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1 mt-0.5">Peito de frango desfiado bem temperado e Catupiry genuíno.</p>
+<div class="flex items-center justify-between mt-2">
+<div class="flex items-baseline gap-1.5">
+<span class="font-headline-sm text-[16px] text-primary font-bold">R$ 6,50</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant line-through text-[11px]">R$ 7,50</span>
+</div>
+<button class="add-btn h-8 px-3 bg-primary-container text-on-primary-container font-label-md text-label-md rounded-lg flex items-center gap-1 font-bold active:scale-95 transition-all shadow-[0_2px_6px_rgba(250,169,1,0.25)]" data-item="Esfiha Frango Catupiry" data-price="6.50" type="button">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span>Adicionar</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Item 3: Esfiha de Queijo (Vegetariana) -->
+<div class="product-card group relative bg-surface-container-lowest p-spacing-sm rounded-xl shadow-[0_2px_8px_rgba(50,35,3,0.06)] flex items-center gap-spacing-sm" data-tags="salgadas todas">
+<div class="relative w-20 h-20 shrink-0 rounded-lg overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Traditional open melted white cheese esfiha with fresh green oregano sprinkle and slightly blistered golden edges on rustic surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZyILMC8cVpseVmrumhtaaFIQFWGXcFrcS1TTqYoviyn8dXoyLWM3lDthKxS5T_aYibn5m2LI0XGmCGmume5AMgUK4iGgrq1ecj8SXw_4uUqOj18K_sR-Mrncsgfqtk3Q_u5tqCNWqt9mpyS1vtY6roTK6OvWVYMSlFKHGJCv4KrJFXbf5MXd_GDgZD5pZuJPeyYp5iKj0MmB1X7BbRzl8AD-38HdswchfPPhoyMuCNgF1Tt_AajabkQ"/>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-1.5 flex-wrap">
+<h4 class="font-headline-sm text-[15px] leading-tight text-on-surface truncate">Esfiha de Queijo</h4>
+<span class="bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-[9px] px-1.5 py-0.5 rounded font-bold uppercase flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[10px]">spa</span>
+            Vegetariana
+          </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1 mt-0.5">Blend especial de queijos suaves derretidos com orégano puro.</p>
+<div class="flex items-center justify-between mt-2">
+<span class="font-headline-sm text-[16px] text-on-surface font-bold">R$ 6,00</span>
+<button class="add-btn h-8 px-3 bg-primary-container text-on-primary-container font-label-md text-label-md rounded-lg flex items-center gap-1 font-bold active:scale-95 transition-all shadow-[0_2px_6px_rgba(250,169,1,0.25)]" data-item="Esfiha de Queijo" data-price="6.00" type="button">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span>Adicionar</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Item 4: Esfiha de Calabresa -->
+<div class="product-card group relative bg-surface-container-lowest p-spacing-sm rounded-xl shadow-[0_2px_8px_rgba(50,35,3,0.06)] flex items-center gap-spacing-sm" data-tags="salgadas todas">
+<div class="relative w-20 h-20 shrink-0 rounded-lg overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Finely ground smoked calabrese sausage open esfiha with mild onions and black pepper touches, freshly baked golden dough" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHIjQQxb7ON_dYgA0R-B3o3uIeaA1YdZJzzHq_gWCQS7BXgxyxrq5ngP1GRf0BJ_81m0u3luodcCd-_QC9CYjE8HRCYAHdVgX9lfRj_FRzA7kL2nRgcZdpPOjvK4CPfzkKoo94dVOit-qJYPyAw1SBhsbACXPJ_73RVKaRiIC1E_T_YmueFfiEj4HkYXn9W6uCQ0DYlmqlnPROrr2obvsFdOwvcPBdNfVuqKnrmhHoGvf3w5yE6J2TXA"/>
+</div>
+<div class="flex-1 min-w-0">
+<h4 class="font-headline-sm text-[15px] leading-tight text-on-surface truncate">Esfiha de Calabresa</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1 mt-0.5">Calabresa moída artesanal levemente picante com cebola fininha.</p>
+<div class="flex items-center justify-between mt-2">
+<span class="font-headline-sm text-[16px] text-on-surface font-bold">R$ 6,50</span>
+<button class="add-btn h-8 px-3 bg-primary-container text-on-primary-container font-label-md text-label-md rounded-lg flex items-center gap-1 font-bold active:scale-95 transition-all shadow-[0_2px_6px_rgba(250,169,1,0.25)]" data-item="Esfiha de Calabresa" data-price="6.50" type="button">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span>Adicionar</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Item 5: Esfiha de Escarola (Esgotado) -->
+<div class="product-card relative bg-surface-container-lowest/60 p-spacing-sm rounded-xl shadow-[0_1px_4px_rgba(50,35,3,0.03)] flex items-center gap-spacing-sm opacity-75" data-tags="salgadas todas">
+<div class="relative w-20 h-20 shrink-0 rounded-lg overflow-hidden bg-surface-container grayscale">
+<img class="w-full h-full object-cover" data-alt="Braised escarole endive esfiha with garlic and mozzarella hints, rustic Mediterranean bakery style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAaPc2rhz0eN5PPJi5lLhjp8CrkxpQQbdcGMeB0wdCJYfaE8kG7KxLpNnO3vCfdJ_18-mIbKR-56j9jUIHO2J6AXm5vJM1SNh9APeUPHwtU9GucQMAZ0Ff4BjGcipIQEEY2H3LSys5-4yyaB4AEd2OmXfQTVp7P4KPVKHtEPcEBrPI4PMe3Vg-JMyufk2H_saSBIJoC_wGA1ObY7Nz4nWBL4bChzqJwZcdumIeo2TrIOd04f-XrNH_6fw"/>
+<div class="absolute inset-0 bg-on-surface/40 flex items-center justify-center">
+<span class="material-symbols-outlined text-surface text-[22px]">block</span>
+</div>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-1.5 flex-wrap">
+<h4 class="font-headline-sm text-[15px] leading-tight text-on-surface/70 truncate">Esfiha de Escarola</h4>
+<span class="bg-surface-container-highest text-on-surface-variant font-label-sm text-[9px] px-1.5 py-0.5 rounded font-bold uppercase">Esgotado</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant/70 line-clamp-1 mt-0.5">Escarola refogada no alho, azeite extravirgem e leve camada de mussarela.</p>
+<div class="flex items-center justify-between mt-2">
+<span class="font-headline-sm text-[16px] text-on-surface/60 font-bold">R$ 6,00</span>
+<button class="h-8 px-3 bg-surface-container text-on-surface-variant/50 font-label-md text-label-md rounded-lg flex items-center gap-1 font-semibold cursor-not-allowed" disabled="" type="button">
+<span class="material-symbols-outlined text-[16px]">remove_shopping_cart</span>
+<span>Indisponível</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Item 6: Esfiha de Chocolate -->
+<div class="product-card group relative bg-surface-container-lowest p-spacing-sm rounded-xl shadow-[0_2px_8px_rgba(50,35,3,0.06)] flex items-center gap-spacing-sm" data-tags="doces todas">
+<div class="relative w-20 h-20 shrink-0 rounded-lg overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Sweet dessert esfiha with glossy melted rich milk chocolate spread and chocolate curls topping, warm pastry" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBdKvjq34hSyf2a_P8t8LDdfYAne42OEqYVPw7M8Xb8Cu8wJnjeIl-BmEYs63VudDhXIixQU8uZ-tkkuSgoRbZm1BKNkwTAnM2uvXAcLGHrkspXDFhT4dLrr5fiNZQ48n6YoXhuuqP-LGEWIKlfjPLBISAH0CQYlXWPDQnscLLMq26NBhwp0Z6_oFiFQ6dOzh6Ez7wOOmfqmgMygoC7ZM6u44sah7JLe6XvdEPHgWnHot-ONrmlaSLZg"/>
+<div class="absolute top-1 left-1">
+<span class="bg-surface-container-highest text-secondary font-label-sm text-[9px] font-bold px-1.5 py-0.5 rounded shadow-sm flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[11px]">bakery_dining</span>
+            DOCE
+          </span>
+</div>
+</div>
+<div class="flex-1 min-w-0">
+<h4 class="font-headline-sm text-[15px] leading-tight text-on-surface truncate">Esfiha de Chocolate</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1 mt-0.5">Chocolate ao leite cremoso derretido no forno com raspas finas.</p>
+<div class="flex items-center justify-between mt-2">
+<span class="font-headline-sm text-[16px] text-on-surface font-bold">R$ 7,00</span>
+<button class="add-btn h-8 px-3 bg-primary-container text-on-primary-container font-label-md text-label-md rounded-lg flex items-center gap-1 font-bold active:scale-95 transition-all shadow-[0_2px_6px_rgba(250,169,1,0.25)]" data-item="Esfiha de Chocolate" data-price="7.00" type="button">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span>Adicionar</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Item 7: Esfiha Romeu e Julieta -->
+<div class="product-card group relative bg-surface-container-lowest p-spacing-sm rounded-xl shadow-[0_2px_8px_rgba(50,35,3,0.06)] flex items-center gap-spacing-sm" data-tags="doces todas">
+<div class="relative w-20 h-20 shrink-0 rounded-lg overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Sweet open Brazilian dessert esfiha with creamy melted white cheese and warm rich red guava paste swirls" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWajq4s1IJdFYa_hznd4OcETJIOlmS_ICcV8hFyZzQSWaLcRlkZvBMtDZBsDaMKT7kiT7F3z1H_YGqE2F-ymxuTMDs97gHm7jq3K3X2xaqCt5T-v_Y02o0Vt9QF8dAWLq4i7004F1SakwR7qZNflpwEQNQU7zOCu0Mmhfd-eU2en0rzi2QoQc9Pu1XlkCgTPYmUrFxmn8dflqw1e0egYx9h1OzQIb-9Cn2NyGZddTPp7EoM4NXrdl7Lg"/>
+</div>
+<div class="flex-1 min-w-0">
+<h4 class="font-headline-sm text-[15px] leading-tight text-on-surface truncate">Esfiha Romeu e Julieta</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1 mt-0.5">Goiabada cascão artesanal combinada com queijo derretido quentinho.</p>
+<div class="flex items-center justify-between mt-2">
+<span class="font-headline-sm text-[16px] text-on-surface font-bold">R$ 7,50</span>
+<button class="add-btn h-8 px-3 bg-primary-container text-on-primary-container font-label-md text-label-md rounded-lg flex items-center gap-1 font-bold active:scale-95 transition-all shadow-[0_2px_6px_rgba(250,169,1,0.25)]" data-item="Esfiha Romeu e Julieta" data-price="7.50" type="button">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span>Adicionar</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Item 8: Suco Natural 500ml (Promoção) -->
+<div class="product-card group relative bg-surface-container-lowest p-spacing-sm rounded-xl shadow-[0_2px_8px_rgba(50,35,3,0.06)] flex items-center gap-spacing-sm" data-tags="bebidas promocoes todas">
+<div class="relative w-20 h-20 shrink-0 rounded-lg overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Chilled bottle of freshly squeezed orange juice with ice condensation droplets on clear surface with natural orange slices" src="https://lh3.googleusercontent.com/aida-public/AB6AXuChXpqijPzn35xUWa_KcCosC_LMw2nCT9IQ8HN0k7cBYyZeaQAovWdarS5HgQnpnUt38IQU6iQq2a6l0wWCBfR2QfwBDFQWlyvsBeoOmMrz5xwTdG16JP9pMwqneQLQA1lsTQIVSDovTV7rHB77h_W5_c3STxrA1TiwOnXZq-qDRlCxLrx-59SZAu6gT-friI-brvQ1SvEhjB-c0VKwJEKP3iZRk9_VXyPnr48VohjwhmN8eC-_BCX0YQ"/>
+<div class="absolute top-1 left-1">
+<span class="bg-error text-on-error font-label-sm text-[9px] font-bold px-1.5 py-0.5 rounded shadow-sm flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[11px]">percent</span>
+            OFF
+          </span>
+</div>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-1.5 flex-wrap">
+<h4 class="font-headline-sm text-[15px] leading-tight text-on-surface truncate">Suco Natural 500ml</h4>
+<span class="bg-error-container text-on-error-container font-label-sm text-[9px] px-1.5 py-0.5 rounded font-bold uppercase">PROMOÇÃO</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1 mt-0.5">Laranja fresquinha espremida na hora, sem conservantes, garrafa 500ml.</p>
+<div class="flex items-center justify-between mt-2">
+<div class="flex items-baseline gap-1.5">
+<span class="font-headline-sm text-[16px] text-primary font-bold">R$ 7,50</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant line-through text-[11px]">R$ 9,00</span>
+</div>
+<button class="add-btn h-8 px-3 bg-primary-container text-on-primary-container font-label-md text-label-md rounded-lg flex items-center gap-1 font-bold active:scale-95 transition-all shadow-[0_2px_6px_rgba(250,169,1,0.25)]" data-item="Suco Natural 500ml" data-price="7.50" type="button">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span>Adicionar</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Item 9: Refrigerante Lata 350ml -->
+<div class="product-card group relative bg-surface-container-lowest p-spacing-sm rounded-xl shadow-[0_2px_8px_rgba(50,35,3,0.06)] flex items-center gap-spacing-sm" data-tags="bebidas todas">
+<div class="relative w-20 h-20 shrink-0 rounded-lg overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Chilled aluminum soda can with cool condensation droplets next to ice cubes in studio beverage lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDs_5DoPGlnF8nLOXNlNXaeoQBdyEJBdlIzi6En41awslOr1WweCyHiGnhdqMCuYUmjNXHw8almYLStxuZPYplj3hiWDdTEAa4Rnnuhuxt86osBDH9xf6gN4xJ2JmHjjC0ALnGBxdCQ9ootZvebgDXW5aD6nifrWp39--Lh4bao5dG34Prs2K3fIcMEny2xgL4p96YoiKESgI6FGfwNodf8I47xdKvRLSLb4yGkmjCoKuspc86gcqEXKg"/>
+</div>
+<div class="flex-1 min-w-0">
+<h4 class="font-headline-sm text-[15px] leading-tight text-on-surface truncate">Refrigerante Lata 350ml</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1 mt-0.5">Coca-Cola, Guaraná Antarctica ou Zero. Escolha bem gelado.</p>
+<div class="flex items-center justify-between mt-2">
+<span class="font-headline-sm text-[16px] text-on-surface font-bold">R$ 6,00</span>
+<button class="add-btn h-8 px-3 bg-primary-container text-on-primary-container font-label-md text-label-md rounded-lg flex items-center gap-1 font-bold active:scale-95 transition-all shadow-[0_2px_6px_rgba(250,169,1,0.25)]" data-item="Refrigerante Lata" data-price="6.00" type="button">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span>Adicionar</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Item 10: Água Mineral 500ml -->
+<div class="product-card group relative bg-surface-container-lowest p-spacing-sm rounded-xl shadow-[0_2px_8px_rgba(50,35,3,0.06)] flex items-center gap-spacing-sm" data-tags="bebidas todas">
+<div class="relative w-20 h-20 shrink-0 rounded-lg overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Pure mineral water bottle with fresh water droplets on cold transparent bottle with clean minimalist background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJDIsxAVb9i_KLopty-5kF3_6EciWCRYOjKZBPVzyTwRSTiGodx02_Zna7-HcP6gGbOhiJT1eDKvYsalBbbZyO0Jbbqf32M8VV77dn_VamZH0aRqy2hO8Q1VHYsQU1mh7owgjqwtYzr80PWin7OgR67lpJ8xcLOG-3Jybx1Q51KGCLvahPWzv2AIuDnqbInUwPQD2fCiB6x0Cd197sSQstGjI85us_cqCv_qCghUIMmA_X0HsRCzguYQ"/>
+</div>
+<div class="flex-1 min-w-0">
+<h4 class="font-headline-sm text-[15px] leading-tight text-on-surface truncate">Água Mineral 500ml</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1 mt-0.5">Opção sem gás ou com gás, servida com todo o frescor.</p>
+<div class="flex items-center justify-between mt-2">
+<span class="font-headline-sm text-[16px] text-on-surface font-bold">R$ 4,00</span>
+<button class="add-btn h-8 px-3 bg-primary-container text-on-primary-container font-label-md text-label-md rounded-lg flex items-center gap-1 font-bold active:scale-95 transition-all shadow-[0_2px_6px_rgba(250,169,1,0.25)]" data-item="Água Mineral 500ml" data-price="4.00" type="button">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span>Adicionar</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Custom Empty State for Filter Search (Hidden by default) -->
+<div class="hidden flex-col items-center justify-center text-center px-screen-gutter py-12" id="empty-state">
+<div class="w-16 h-16 rounded-full bg-surface-container-low flex items-center justify-center text-primary mb-3">
+<span class="material-symbols-outlined text-[32px]">search_off</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Nenhum item encontrado</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 max-w-xs">Tente selecionar outra categoria ou conferir as opções salgadas mais pedidas.</p>
+<button class="mt-4 px-4 py-2 bg-primary text-on-primary font-label-md text-label-md rounded-lg" id="reset-filter-btn" type="button">Ver cardápio todo</button>
+</div>
+<!-- Sticky Floating Action Cart Bar -->
+<div class="fixed bottom-20 inset-x-0 z-40 px-screen-gutter pointer-events-none">
+<div class="pointer-events-auto mx-auto max-w-md w-full bg-inverse-surface text-inverse-on-surface px-spacing-md py-3 rounded-2xl shadow-[0_8px_24px_rgba(40,24,0,0.35)] flex items-center justify-between transform transition-all duration-300 hover:scale-[1.01] active:scale-[0.99]" id="cart-bar">
+<div class="flex items-center gap-spacing-xs">
+<div class="relative w-10 h-10 rounded-xl bg-primary-container text-on-primary-container flex items-center justify-center shadow-md">
+<span class="material-symbols-outlined text-[20px]">shopping_bag</span>
+<span class="absolute -top-1 -right-1 min-w-[1.25rem] h-5 px-1 rounded-full bg-surface-container-lowest text-primary font-label-sm text-[10px] font-bold flex items-center justify-center shadow" id="cart-counter">3</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg font-bold text-inverse-on-surface leading-tight">Ver Carrinho</span>
+<span class="font-body-sm text-body-sm text-primary-fixed-dim text-[12px]"><span id="cart-items-text">3 itens</span> adicionados</span>
+</div>
+</div>
+<div class="flex items-center gap-spacing-xs">
+<span class="font-headline-sm text-headline-sm font-bold text-primary-container" id="cart-total">R$ 32,00</span>
+<a aria-label="Abrir sacola" class="w-8 h-8 rounded-full bg-surface-container-lowest/10 flex items-center justify-center text-inverse-on-surface hover:bg-surface-container-lowest/20 transition-colors" data-path="carrinho-e-cadastro" href="#">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Micro Interaction Toast Feedback Notification -->
+<div class="fixed top-20 left-1/2 -translate-x-1/2 z-50 bg-primary-container text-on-primary-container font-label-md text-label-md px-4 py-2.5 rounded-full shadow-[0_4px_16px_rgba(250,169,1,0.4)] flex items-center gap-2 opacity-0 pointer-events-none transition-all duration-300 -translate-y-2" id="toast-notify">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+<span id="toast-message">Item adicionado com sucesso!</span>
+</div>
+</div>
+<script>
+  (function() {
+    let cartCount = 3;
+    let cartTotalVal = 32.00;
+
+    const cartCounterEl = document.getElementById('cart-counter');
+    const cartTotalEl = document.getElementById('cart-total');
+    const cartItemsTextEl = document.getElementById('cart-items-text');
+    const toastEl = document.getElementById('toast-notify');
+    const toastMsgEl = document.getElementById('toast-message');
+    const cartBar = document.getElementById('cart-bar');
+    const categoryChips = document.querySelectorAll('.category-chip');
+    const productCards = document.querySelectorAll('.product-card');
+    const searchInput = document.getElementById('menu-search');
+    const emptyState = document.getElementById('empty-state');
+    const itemsCountEl = document.getElementById('items-count');
+    const sectionTitleEl = document.getElementById('section-title');
+    const resetFilterBtn = document.getElementById('reset-filter-btn');
+
+    let currentFilter = 'todas';
+    let searchQuery = '';
+
+    function showToast(text) {
+      if (!toastEl) return;
+      toastMsgEl.textContent = text;
+      toastEl.classList.remove('opacity-0', '-translate-y-2');
+      toastEl.classList.add('opacity-100', 'translate-y-0');
+
+      if (cartBar) {
+        cartBar.classList.add('scale-105');
+        setTimeout(() => cartBar.classList.remove('scale-105'), 200);
+      }
+
+      setTimeout(() => {
+        toastEl.classList.remove('opacity-100', 'translate-y-0');
+        toastEl.classList.add('opacity-0', '-translate-y-2');
+      }, 1800);
+    }
+
+    function updateCart(item, price) {
+      cartCount += 1;
+      cartTotalVal += price;
+
+      if (cartCounterEl) cartCounterEl.textContent = cartCount;
+      if (cartItemsTextEl) cartItemsTextEl.textContent = cartCount + ' itens';
+      if (cartTotalEl) {
+        cartTotalEl.textContent = 'R$ ' + cartTotalVal.toFixed(2).replace('.', ',');
+      }
+
+      showToast(item + ' adicionada!');
+    }
+
+    document.querySelectorAll('.add-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const item = btn.getAttribute('data-item') || 'Esfiha';
+        const price = parseFloat(btn.getAttribute('data-price') || '6.50');
+        updateCart(item, price);
+      });
+    });
+
+    function filterProducts() {
+      let visibleCount = 0;
+
+      productCards.forEach(card => {
+        const tags = card.getAttribute('data-tags') || '';
+        const title = card.querySelector('h4')?.textContent.toLowerCase() || '';
+        const desc = card.querySelector('p')?.textContent.toLowerCase() || '';
+
+        const matchesCategory = currentFilter === 'todas' || tags.includes(currentFilter);
+        const matchesSearch = !searchQuery || title.includes(searchQuery) || desc.includes(searchQuery);
+
+        if (matchesCategory && matchesSearch) {
+          card.classList.remove('hidden');
+          visibleCount++;
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+
+      if (itemsCountEl) itemsCountEl.textContent = visibleCount + (visibleCount === 1 ? ' item' : ' itens');
+
+      if (emptyState) {
+        if (visibleCount === 0) {
+          emptyState.classList.remove('hidden');
+          emptyState.classList.add('flex');
+        } else {
+          emptyState.classList.add('hidden');
+          emptyState.classList.remove('flex');
+        }
+      }
+    }
+
+    categoryChips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        categoryChips.forEach(c => {
+          c.classList.remove('bg-primary-container', 'text-on-primary-container', 'active');
+          c.classList.add('bg-surface-container-lowest', 'text-secondary');
+        });
+
+        chip.classList.add('bg-primary-container', 'text-on-primary-container', 'active');
+        chip.classList.remove('bg-surface-container-lowest', 'text-secondary');
+
+        currentFilter = chip.getAttribute('data-category') || 'todas';
+
+        if (sectionTitleEl) {
+          const names = {
+            'todas': 'Cardápio Completo',
+            'promocoes': 'Ofertas Imperdíveis',
+            'salgadas': 'Esfihas Salgadas',
+            'doces': 'Esfihas Doces',
+            'bebidas': 'Bebidas Geladas'
+          };
+          sectionTitleEl.textContent = names[currentFilter] || 'Cardápio';
+        }
+
+        filterProducts();
+      });
+    });
+
+    if (searchInput) {
+      searchInput.addEventListener('input', (e) => {
+        searchQuery = e.target.value.toLowerCase().trim();
+        filterProducts();
+      });
+    }
+
+    if (resetFilterBtn) {
+      resetFilterBtn.addEventListener('click', () => {
+        if (searchInput) searchInput.value = '';
+        searchQuery = '';
+        const allChip = document.querySelector('[data-category="todas"]');
+        if (allChip) allChip.click();
+      });
+    }
+  })();
+</script></main><nav class="fixed bottom-0 inset-x-0 z-50 pb-safe bg-surface/95 backdrop-blur-xl shadow-[0_-4px_16px_rgba(50,35,3,0.06)]" data-active-classes="text-primary font-bold"><div class="flex justify-around items-center h-16 px-spacing-xs"><a class="flex flex-col items-center justify-center min-w-touch-target-min h-touch-target-min text-on-surface-variant transition-colors" data-path="cardapio" href="#"><span class="material-symbols-outlined">menu_book</span><span class="font-label-sm text-label-sm mt-0.5">Cardápio</span></a><a class="flex flex-col items-center justify-center min-w-touch-target-min h-touch-target-min text-on-surface-variant transition-colors" data-path="promocoes" href="#"><span class="material-symbols-outlined">local_offer</span><span class="font-label-sm text-label-sm mt-0.5">Ofertas</span></a><a class="flex flex-col items-center justify-center min-w-touch-target-min h-touch-target-min text-on-surface-variant transition-colors" data-path="meus-pedidos" href="#"><span class="material-symbols-outlined">receipt_long</span><span class="font-label-sm text-label-sm mt-0.5">Pedidos</span></a><a class="flex flex-col items-center justify-center min-w-touch-target-min h-touch-target-min text-on-surface-variant transition-colors" data-path="perfil" href="#"><span class="material-symbols-outlined">person</span><span class="font-label-sm text-label-sm mt-0.5">Perfil</span></a></div></nav></body></html>

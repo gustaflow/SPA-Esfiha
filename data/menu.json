@@ -1,0 +1,159 @@
+{
+  "meta": {
+    "estabelecimento": "Esfiha's",
+    "whatsapp": "+5511999999999",
+    "moeda": "BRL"
+  },
+  "produtos": [
+    {
+      "id": "esf-carne",
+      "nome": "Esfiha de Carne",
+      "categoria": "esfiha",
+      "tipoSabor": "salgada",
+      "descricao": "Carne moída temperada com cebola, hortelã e pimenta síria.",
+      "preco": 6.5,
+      "promocao": false,
+      "precoPromocional": null,
+      "imagem": "https://lh3.googleusercontent.com/aida-public/AB6AXuD0xh-xMkMmy9cMTmtayipH0lepY2LYPaT0SLXQd5TnZZrBIrLQxY83_OYmeIN9gZ1Y8vUzMYYaDXW5lHT3IiM41_kMY0-t6DwcGJ1OmjZyj8LOWLmmEb1QgR3BtLyh7pR__KdZpNOVvJJmpVpjuqYvIsgzRFZfNQwVoxy9_57VW6buU5zKpyK5ZO7BTlMAHLCYmcBfc6U2b6Nn1NnGwW2yLBVi3NwzFaYlGvrtGX66iRAnUCbUApAibA",
+      "icon": "local_pizza",
+      "disponivel": true,
+      "tags": [
+        "best-seller"
+      ]
+    },
+    {
+      "id": "esf-frango-catupiry",
+      "nome": "Esfiha de Frango com Catupiry",
+      "categoria": "esfiha",
+      "tipoSabor": "salgada",
+      "descricao": "Frango desfiado cremoso com catupiry original.",
+      "preco": 7.5,
+      "promocao": true,
+      "precoPromocional": 6.5,
+      "imagem": "https://lh3.googleusercontent.com/aida-public/AB6AXuDE9lVGD7N9bjHQNNLQesWwn4jEXB3rBsaFtEuamZj2_f5IKlkZjwq9STAst4D3E6-6zyiTAEDCRdyhehX35Rg_gnxdtVfOT-gVrdblniAYkSu_dAO86_PVHxRll2ZeumCsOUFH6OP5yTzK29giIJ8YbTVIG4bDkrDwDlCzqM98uojQnWzMjNS8MMf3VHR5MRnQ4pZjyn9Bqu8WnB9dA99bXJ3_0zgCNx9_U4Rb5JVigxOw84MJMDUJDA",
+      "icon": "local_pizza",
+      "disponivel": true,
+      "tags": [
+        "promocao"
+      ]
+    },
+    {
+      "id": "esf-queijo",
+      "nome": "Esfiha de Queijo",
+      "categoria": "esfiha",
+      "tipoSabor": "salgada",
+      "descricao": "Muçarela derretida com orégano.",
+      "preco": 6.0,
+      "promocao": false,
+      "precoPromocional": null,
+      "imagem": "https://lh3.googleusercontent.com/aida-public/AB6AXuCZyILMC8cVpseVmrumhtaaFIQFWGXcFrcS1TTqYoviyn8dXoyLWM3lDthKxS5T_aYibn5m2LI0XGmCGmume5AMgUK4iGgrq1ecj8SXw_4uUqOj18K_sR-Mrncsgfqtk3Q_u5tqCNWqt9mpyS1vtY6roTK6OvWVYMSlFKHGJCv4KrJFXbf5MXd_GDgZD5pZuJPeyYp5iKj0MmB1X7BbRzl8AD-38HdswchfPPhoyMuCNgF1Tt_AajabkQ",
+      "icon": "local_pizza",
+      "disponivel": true,
+      "tags": [
+        "vegetariana"
+      ]
+    },
+    {
+      "id": "esf-calabresa",
+      "nome": "Esfiha de Calabresa",
+      "categoria": "esfiha",
+      "tipoSabor": "salgada",
+      "descricao": "Calabresa fatiada com cebola roxa.",
+      "preco": 6.5,
+      "promocao": false,
+      "precoPromocional": null,
+      "imagem": "https://lh3.googleusercontent.com/aida-public/AB6AXuAHIjQQxb7ON_dYgA0R-B3o3uIeaA1YdZJzzHq_gWCQS7BXgxyxrq5ngP1GRf0BJ_81m0u3luodcCd-_QC9CYjE8HRCYAHdVgX9lfRj_FRzA7kL2nRgcZdpPOjvK4CPfzkKoo94dVOit-qJYPyAw1SBhsbACXPJ_73RVKaRiIC1E_T_YmueFfiEj4HkYXn9W6uCQ0DYlmqlnPROrr2obvsFdOwvcPBdNfVuqKnrmhHoGvf3w5yE6J2TXA",
+      "icon": "local_pizza",
+      "disponivel": true,
+      "tags": []
+    },
+    {
+      "id": "esf-escarola",
+      "nome": "Esfiha de Escarola",
+      "categoria": "esfiha",
+      "tipoSabor": "salgada",
+      "descricao": "Escarola refogada com alho e azeite.",
+      "preco": 6.0,
+      "promocao": false,
+      "precoPromocional": null,
+      "imagem": "https://lh3.googleusercontent.com/aida-public/AB6AXuAaPc2rhz0eN5PPJi5lLhjp8CrkxpQQbdcGMeB0wdCJYfaE8kG7KxLpNnO3vCfdJ_18-mIbKR-56j9jUIHO2J6AXm5vJM1SNh9APeUPHwtU9GucQMAZ0Ff4BjGcipIQEEY2H3LSys5-4yyaB4AEd2OmXfQTVp7P4KPVKHtEPcEBrPI4PMe3Vg-JMyufk2H_saSBIJoC_wGA1ObY7Nz4nWBL4bChzqJwZcdumIeo2TrIOd04f-XrNH_6fw",
+      "icon": "spa",
+      "disponivel": false,
+      "tags": [
+        "vegetariana"
+      ]
+    },
+    {
+      "id": "esf-chocolate",
+      "nome": "Esfiha de Chocolate",
+      "categoria": "esfiha",
+      "tipoSabor": "doce",
+      "descricao": "Chocolate ao leite derretido polvilhado com açúcar.",
+      "preco": 7.0,
+      "promocao": false,
+      "precoPromocional": null,
+      "imagem": "https://lh3.googleusercontent.com/aida-public/AB6AXuCBdKvjq34hSyf2a_P8t8LDdfYAne42OEqYVPw7M8Xb8Cu8wJnjeIl-BmEYs63VudDhXIixQU8uZ-tkkuSgoRbZm1BKNkwTAnM2uvXAcLGHrkspXDFhT4dLrr5fiNZQ48n6YoXhuuqP-LGEWIKlfjPLBISAH0CQYlXWPDQnscLLMq26NBhwp0Z6_oFiFQ6dOzh6Ez7wOOmfqmgMygoC7ZM6u44sah7JLe6XvdEPHgWnHot-ONrmlaSLZg",
+      "icon": "cookie",
+      "disponivel": true,
+      "tags": []
+    },
+    {
+      "id": "esf-romeu-julieta",
+      "nome": "Esfiha Romeu e Julieta",
+      "categoria": "esfiha",
+      "tipoSabor": "doce",
+      "descricao": "Queijo minas com goiabada cremosa.",
+      "preco": 7.5,
+      "promocao": false,
+      "precoPromocional": null,
+      "imagem": "https://lh3.googleusercontent.com/aida-public/AB6AXuBWajq4s1IJdFYa_hznd4OcETJIOlmS_ICcV8hFyZzQSWaLcRlkZvBMtDZBsDaMKT7kiT7F3z1H_YGqE2F-ymxuTMDs97gHm7jq3K3X2xaqCt5T-v_Y02o0Vt9QF8dAWLq4i7004F1SakwR7qZNflpwEQNQU7zOCu0Mmhfd-eU2en0rzi2QoQc9Pu1XlkCgTPYmUrFxmn8dflqw1e0egYx9h1OzQIb-9Cn2NyGZddTPp7EoM4NXrdl7Lg",
+      "icon": "cookie",
+      "disponivel": true,
+      "tags": []
+    },
+    {
+      "id": "beb-refrigerante-lata",
+      "nome": "Refrigerante Lata 350ml",
+      "categoria": "bebida",
+      "tipoSabor": "salgada",
+      "descricao": "Lata 350ml. Sabores: cola, guaraná, laranja.",
+      "preco": 6.0,
+      "promocao": false,
+      "precoPromocional": null,
+      "imagem": "https://lh3.googleusercontent.com/aida-public/AB6AXuDs_5DoPGlnF8nLOXNlNXaeoQBdyEJBdlIzi6En41awslOr1WweCyHiGnhdqMCuYUmjNXHw8almYLStxuZPYplj3hiWDdTEAa4Rnnuhuxt86osBDH9xf6gN4xJ2JmHjjC0ALnGBxdCQ9ootZvebgDXW5aD6nifrWp39--Lh4bao5dG34Prs2K3fIcMEny2xgL4p96YoiKESgI6FGfwNodf8I47xdKvRLSLb4yGkmjCoKuspc86gcqEXKg",
+      "icon": "local_drink",
+      "disponivel": true,
+      "tags": []
+    },
+    {
+      "id": "beb-suco-natural",
+      "nome": "Suco Natural 500ml",
+      "categoria": "bebida",
+      "tipoSabor": "doce",
+      "descricao": "Laranja, abacaxi com hortelã ou maracujá.",
+      "preco": 9.0,
+      "promocao": true,
+      "precoPromocional": 7.5,
+      "imagem": "https://lh3.googleusercontent.com/aida-public/AB6AXuChXpqijPzn35xUWa_KcCosC_LMw2nCT9IQ8HN0k7cBYyZeaQAovWdarS5HgQnpnUt38IQU6iQq2a6l0wWCBfR2QfwBDFQWlyvsBeoOmMrz5xwTdG16JP9pMwqneQLQA1lsTQIVSDovTV7rHB77h_W5_c3STxrA1TiwOnXZq-qDRlCxLrx-59SZAu6gT-friI-brvQ1SvEhjB-c0VKwJEKP3iZRk9_VXyPnr48VohjwhmN8eC-_BCX0YQ",
+      "icon": "local_drink",
+      "disponivel": true,
+      "tags": [
+        "promocao"
+      ]
+    },
+    {
+      "id": "beb-agua",
+      "nome": "Água Mineral 500ml",
+      "categoria": "bebida",
+      "tipoSabor": "salgada",
+      "descricao": "Sem gás.",
+      "preco": 4.0,
+      "promocao": false,
+      "precoPromocional": null,
+      "imagem": "https://lh3.googleusercontent.com/aida-public/AB6AXuBJDIsxAVb9i_KLopty-5kF3_6EciWCRYOjKZBPVzyTwRSTiGodx02_Zna7-HcP6gGbOhiJT1eDKvYsalBbbZyO0Jbbqf32M8VV77dn_VamZH0aRqy2hO8Q1VHYsQU1mh7owgjqwtYzr80PWin7OgR67lpJ8xcLOG-3Jybx1Q51KGCLvahPWzv2AIuDnqbInUwPQD2fCiB6x0Cd197sSQstGjI85us_cqCv_qCghUIMmA_X0HsRCzguYQ",
+      "icon": "water_drop",
+      "disponivel": true,
+      "tags": []
+    }
+  ]
+}

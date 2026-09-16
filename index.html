@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"/>
+  <title>Esfiha's - Cardápio & Delivery</title>
+
+  <!-- Google Fonts: Poppins (Titulos) e Open Sans (Texto) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet"/>
+
+  <!-- Material Symbols Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            'brand-dark': '#322303',
+            'brand-secondary': '#694807',
+            'brand-primary': '#FAA901',
+            'brand-cream': '#FFFEE0',
+            'surface-container': '#ffebcd',
+            'surface-low': '#fff2e0'
+          },
+          fontFamily: {
+            heading: ['Poppins', 'sans-serif'],
+            body: ['Open Sans', 'sans-serif']
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body class="bg-white text-brand-dark font-body antialiased flex flex-col min-h-screen selection:bg-brand-primary selection:text-brand-dark">
+
+  <!-- Header Fixo -->
+  <header class="fixed top-0 inset-x-0 z-50 bg-white/90 backdrop-blur-md border-b border-brand-secondary/10 pt-safe">
+    <div class="max-w-md mx-auto h-16 px-4 flex items-center justify-between">
+      <div class="flex items-center gap-3 cursor-pointer" id="brand-logo-btn">
+        <div class="w-10 h-10 rounded-full bg-brand-primary/20 flex items-center justify-center text-brand-secondary">
+          <span class="material-symbols-outlined text-[24px]">restaurant_menu</span>
+        </div>
+        <div class="flex flex-col">
+          <span class="font-heading font-bold text-lg text-brand-dark leading-tight" id="store-name">Esfiha's</span>
+          <span class="text-xs text-brand-secondary font-medium tracking-wide uppercase">Cardápio Digital</span>
+        </div>
+      </div>
+
+      <!-- Cart Icon Header Quick Access -->
+      <button id="header-cart-btn" class="relative w-11 h-11 rounded-full flex items-center justify-center text-brand-secondary hover:bg-brand-cream transition-colors" aria-label="Ver sacola">
+        <span class="material-symbols-outlined text-[24px]">shopping_bag</span>
+        <span id="header-cart-badge" class="hidden absolute top-1.5 right-1.5 min-w-[1.25rem] h-5 px-1 rounded-full bg-brand-primary text-brand-dark font-heading text-xs font-bold items-center justify-center shadow-sm">0</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Container Principal do SPA -->
+  <main class="flex-1 w-full max-w-md mx-auto pt-16 pb-24 bg-white min-h-screen relative">
+
+    <!-- VIEW 1: MENU / CARDÁPIO -->
+    <section id="view-menu" class="view-section active-view flex flex-col w-full">
+
+      <!-- Search & Filter Bar -->
+      <div class="px-4 py-3 flex items-center gap-2">
+        <div class="flex-1 flex items-center bg-gray-50 border border-brand-secondary/15 px-3 py-2.5 rounded-xl">
+          <span class="material-symbols-outlined text-brand-secondary/60 text-[20px] mr-2">search</span>
+          <input type="text" id="menu-search-input" placeholder="Buscar esfiha ou bebida..." class="bg-transparent text-brand-dark text-sm w-full outline-none placeholder:text-brand-secondary/50"/>
+        </div>
+      </div>
+
+      <!-- Store Status Pill -->
+      <div class="px-4 pb-2">
+        <div class="flex items-center justify-between bg-brand-cream/80 border border-brand-secondary/10 px-3 py-2 rounded-lg text-xs">
+          <div class="flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+            <span class="font-semibold text-brand-secondary uppercase">Forno a lenha aquecido</span>
+          </div>
+          <div class="flex items-center gap-1 text-brand-secondary font-medium">
+            <span class="material-symbols-outlined text-[16px]">schedule</span>
+            <span>20-35 min</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Categories Pills Horizontal Scroll -->
+      <div class="w-full overflow-x-auto no-scrollbar py-2 px-4 flex items-center gap-2 sticky top-16 z-40 bg-white/95 backdrop-blur-sm border-b border-brand-secondary/5">
+        <button class="category-chip active px-4 py-1.5 rounded-full bg-brand-primary text-brand-dark font-heading font-semibold text-xs shrink-0 transition-all flex items-center gap-1.5 shadow-sm" data-category="todas">
+          <span class="material-symbols-outlined text-[16px]">dinner_dining</span>
+          <span>Todas</span>
+        </button>
+        <button class="category-chip px-4 py-1.5 rounded-full bg-gray-100 text-brand-secondary font-heading font-semibold text-xs shrink-0 transition-all flex items-center gap-1.5" data-category="promocoes">
+          <span class="material-symbols-outlined text-[16px]">local_offer</span>
+          <span>Promoções</span>
+        </button>
+        <button class="category-chip px-4 py-1.5 rounded-full bg-gray-100 text-brand-secondary font-heading font-semibold text-xs shrink-0 transition-all flex items-center gap-1.5" data-category="salgada">
+          <span class="material-symbols-outlined text-[16px]">local_pizza</span>
+          <span>Salgadas</span>
+        </button>
+        <button class="category-chip px-4 py-1.5 rounded-full bg-gray-100 text-brand-secondary font-heading font-semibold text-xs shrink-0 transition-all flex items-center gap-1.5" data-category="doce">
+          <span class="material-symbols-outlined text-[16px]">cookie</span>
+          <span>Doces</span>
+        </button>
+        <button class="category-chip px-4 py-1.5 rounded-full bg-gray-100 text-brand-secondary font-heading font-semibold text-xs shrink-0 transition-all flex items-center gap-1.5" data-category="bebida">
+          <span class="material-symbols-outlined text-[16px]">local_drink</span>
+          <span>Bebidas</span>
+        </button>
+      </div>
+
+      <!-- Featured Banner (Destaque do Dia) -->
+      <div id="featured-banner" class="px-4 pt-3 pb-2">
+        <div class="relative overflow-hidden rounded-2xl bg-brand-cream border border-brand-secondary/15 p-4 flex flex-col justify-between shadow-sm">
+          <div class="flex items-center gap-2 mb-2">
+            <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-brand-primary text-brand-dark font-heading text-[11px] font-bold shadow-xs">
+              <span class="material-symbols-outlined text-[13px]">local_fire_department</span>
+              DESTAQUE DO DIA
+            </span>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="flex-1">
+              <h2 class="font-heading font-bold text-base text-brand-dark leading-tight" id="featured-title">Esfiha de Frango com Catupiry</h2>
+              <p class="text-xs text-brand-secondary mt-1 line-clamp-2" id="featured-desc">Frango desfiado cremoso com catupiry original.</p>
+              <div class="flex items-center gap-2 mt-2">
+                <span class="font-heading font-bold text-base text-brand-secondary" id="featured-price">R$ 6,50</span>
+                <span class="text-xs text-gray-400 line-through" id="featured-old-price">R$ 7,50</span>
+              </div>
+            </div>
+            <div class="relative w-20 h-20 shrink-0 rounded-xl overflow-hidden shadow-sm bg-white">
+              <img id="featured-img" src="" alt="Destaque" class="w-full h-full object-cover"/>
+            </div>
+          </div>
+          <button id="featured-add-btn" class="mt-3 w-full h-10 bg-brand-primary text-brand-dark font-heading font-bold text-xs rounded-xl flex items-center justify-center gap-1.5 active:scale-[0.98] transition-transform shadow-sm">
+            <span class="material-symbols-outlined text-[18px]">add_circle</span>
+            <span>Aproveitar Destaque</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Menu Section Header -->
+      <div class="px-4 pt-4 pb-2 flex items-center justify-between">
+        <div class="flex items-center gap-1.5">
+          <span class="material-symbols-outlined text-brand-primary text-[20px]">restaurant_menu</span>
+          <h3 class="font-heading font-bold text-base text-brand-dark" id="menu-section-title">Todos os Produtos</h3>
+        </div>
+        <span class="text-xs text-brand-secondary font-medium" id="menu-items-count">0 itens</span>
+      </div>
+
+      <!-- Products Vertical List Container -->
+      <div class="px-4 flex flex-col gap-3 pt-1" id="products-container">
+        <!-- Renderizado dinamicamente pelo JS -->
+      </div>
+
+      <!-- Empty State Search -->
+      <div id="empty-search-state" class="hidden flex-col items-center justify-center text-center px-4 py-12">
+        <div class="w-16 h-16 rounded-full bg-brand-cream flex items-center justify-center text-brand-secondary mb-3">
+          <span class="material-symbols-outlined text-[32px]">search_off</span>
+        </div>
+        <h4 class="font-heading font-semibold text-base text-brand-dark">Nenhum produto encontrado</h4>
+        <p class="text-xs text-brand-secondary mt-1 max-w-xs">Tente buscar por outro termo ou escolha uma categoria diferente no cardápio.</p>
+        <button id="reset-search-btn" class="mt-4 px-4 py-2 bg-brand-primary text-brand-dark font-heading font-semibold text-xs rounded-lg">
+          Ver todo o cardápio
+        </button>
+      </div>
+
+      <!-- Floating Bottom Cart Bar -->
+      <div id="floating-cart-bar" class="hidden fixed bottom-20 inset-x-0 z-40 px-4 pointer-events-none">
+        <div class="pointer-events-auto max-w-md mx-auto bg-brand-dark text-white px-4 py-3 rounded-2xl shadow-lg flex items-center justify-between transform transition-all hover:scale-[1.01] active:scale-[0.99] cursor-pointer" id="open-cart-btn">
+          <div class="flex items-center gap-3">
+            <div class="relative w-10 h-10 rounded-xl bg-brand-primary text-brand-dark flex items-center justify-center shadow-xs">
+              <span class="material-symbols-outlined text-[22px]">shopping_bag</span>
+              <span id="floating-cart-badge" class="absolute -top-1.5 -right-1.5 min-w-[1.25rem] h-5 px-1 rounded-full bg-white text-brand-dark font-heading text-[10px] font-bold flex items-center justify-center shadow-sm">0</span>
+            </div>
+            <div class="flex flex-col">
+              <span class="font-heading font-bold text-xs text-white">Ver Carrinho</span>
+              <span class="text-[11px] text-brand-primary" id="floating-cart-items-count">0 itens</span>
+            </div>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="font-heading font-bold text-sm text-brand-primary" id="floating-cart-total">R$ 0,00</span>
+            <span class="material-symbols-outlined text-white text-[20px]">chevron_right</span>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- VIEW 2: CART & REGISTRATION (CARRINHO E CADASTRO) -->
+    <section id="view-cart" class="view-section hidden-view flex flex-col w-full px-4 pt-2">
+      <div class="flex items-center justify-between pb-3 border-b border-gray-100">
+        <button class="back-to-menu-btn flex items-center gap-1 text-xs text-brand-secondary font-semibold hover:text-brand-dark">
+          <span class="material-symbols-outlined text-[18px]">arrow_back</span>
+          <span>Voltar ao Cardápio</span>
+        </button>
+        <h2 class="font-heading font-bold text-base text-brand-dark">Seu Carrinho</h2>
+        <button id="clear-cart-btn" class="text-xs text-red-600 hover:underline font-medium">Limpar</button>
+      </div>
+
+      <!-- Empty Cart State -->
+      <div id="empty-cart-container" class="flex flex-col items-center justify-center text-center py-12">
+        <div class="w-16 h-16 rounded-full bg-brand-cream flex items-center justify-center text-brand-secondary mb-3">
+          <span class="material-symbols-outlined text-[36px]">shopping_cart</span>
+        </div>
+        <h3 class="font-heading font-bold text-base text-brand-dark">Seu carrinho está vazio</h3>
+        <p class="text-xs text-brand-secondary mt-1 max-w-xs">Adicione esfihas deliciosas do nosso cardápio para realizar seu pedido.</p>
+        <button class="back-to-menu-btn mt-4 px-5 py-2.5 bg-brand-primary text-brand-dark font-heading font-bold text-xs rounded-xl shadow-xs">
+          Explorar Cardápio
+        </button>
+      </div>
+
+      <!-- Cart Content -->
+      <div id="cart-content-container" class="hidden flex-col gap-4 mt-3">
+        <!-- Cart Items List -->
+        <div id="cart-items-list" class="flex flex-col gap-2">
+          <!-- Renderizado dinamicamente -->
+        </div>
+
+        <!-- Order Summary Box -->
+        <div class="bg-brand-cream/60 border border-brand-secondary/10 p-3.5 rounded-xl flex flex-col gap-2 text-xs">
+          <div class="flex justify-between text-brand-secondary">
+            <span>Subtotal</span>
+            <span id="cart-subtotal-text" class="font-semibold text-brand-dark">R$ 0,00</span>
+          </div>
+          <div class="flex justify-between text-brand-secondary">
+            <span>Taxa de Entrega</span>
+            <span class="font-semibold text-emerald-700">Grátis</span>
+          </div>
+          <div class="pt-2 border-t border-brand-secondary/10 flex justify-between font-heading font-bold text-sm text-brand-dark">
+            <span>Total</span>
+            <span id="cart-total-text" class="text-brand-secondary">R$ 0,00</span>
+          </div>
+        </div>
+
+        <!-- Registration Form Section -->
+        <div class="mt-2 bg-white border border-brand-secondary/15 p-4 rounded-2xl shadow-xs flex flex-col gap-3">
+          <div class="flex items-center gap-2 border-b border-gray-100 pb-2">
+            <span class="material-symbols-outlined text-brand-primary text-[20px]">person_pin</span>
+            <h3 class="font-heading font-bold text-sm text-brand-dark">Dados para Entrega</h3>
+          </div>
+
+          <form id="checkout-registration-form" class="flex flex-col gap-3 text-xs">
+            <div>
+              <label class="block font-semibold text-brand-dark mb-1" for="user-name">Nome Completo *</label>
+              <input type="text" id="user-name" required placeholder="Digite seu nome" class="w-full px-3 py-2.5 border border-brand-secondary/20 rounded-xl outline-none focus:border-brand-primary text-xs"/>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div>
+                <label class="block font-semibold text-brand-dark mb-1" for="user-whatsapp">WhatsApp *</label>
+                <input type="tel" id="user-whatsapp" required placeholder="(11) 99999-9999" class="w-full px-3 py-2.5 border border-brand-secondary/20 rounded-xl outline-none focus:border-brand-primary text-xs"/>
+              </div>
+              <div>
+                <label class="block font-semibold text-brand-dark mb-1" for="user-email">E-mail *</label>
+                <input type="email" id="user-email" required placeholder="seu@email.com" class="w-full px-3 py-2.5 border border-brand-secondary/20 rounded-xl outline-none focus:border-brand-primary text-xs"/>
+              </div>
+            </div>
+
+            <div>
+              <label class="block font-semibold text-brand-dark mb-1" for="user-address">Endereço de Entrega *</label>
+              <textarea id="user-address" required rows="2" placeholder="Rua, número, complemento e bairro" class="w-full px-3 py-2 border border-brand-secondary/20 rounded-xl outline-none focus:border-brand-primary text-xs"></textarea>
+            </div>
+
+            <!-- Geolocation Button & Status -->
+            <div class="bg-gray-50 border border-brand-secondary/10 p-3 rounded-xl flex flex-col gap-2">
+              <div class="flex items-center justify-between">
+                <span class="font-semibold text-brand-dark text-xs flex items-center gap-1">
+                  <span class="material-symbols-outlined text-brand-primary text-[16px]">my_location</span>
+                  Localização Geográfica
+                </span>
+                <button type="button" id="get-location-btn" class="px-2.5 py-1 bg-brand-primary/20 hover:bg-brand-primary/40 text-brand-dark font-heading font-semibold text-[11px] rounded-lg transition-colors flex items-center gap-1">
+                  <span class="material-symbols-outlined text-[14px]">near_me</span>
+                  <span>Capturar GPS</span>
+                </button>
+              </div>
+              <p id="location-status" class="text-[11px] text-brand-secondary italic">
+                A captura da localização GPS é opcional para agilizar a entrega.
+              </p>
+            </div>
+
+            <button type="submit" class="mt-2 w-full h-11 bg-brand-primary text-brand-dark font-heading font-bold text-xs rounded-xl flex items-center justify-center gap-1.5 shadow-md active:scale-[0.98] transition-transform">
+              <span>Continuar para Validação de Segurança</span>
+              <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIEW 3: SECURITY VERIFICATION (PROVA DE VIDA / CREDENCIAIS) -->
+    <section id="view-security" class="view-section hidden-view flex flex-col w-full px-4 pt-2">
+      <div class="flex items-center justify-between pb-3 border-b border-gray-100">
+        <button id="back-to-cart-btn" class="flex items-center gap-1 text-xs text-brand-secondary font-semibold hover:text-brand-dark">
+          <span class="material-symbols-outlined text-[18px]">arrow_back</span>
+          <span>Voltar ao Carrinho</span>
+        </button>
+        <h2 class="font-heading font-bold text-base text-brand-dark">Segurança</h2>
+        <div></div>
+      </div>
+
+      <div class="mt-4 bg-white border border-brand-secondary/15 p-5 rounded-2xl shadow-sm flex flex-col items-center text-center gap-4">
+        <div class="w-16 h-16 rounded-full bg-brand-cream flex items-center justify-center text-brand-secondary shadow-xs">
+          <span class="material-symbols-outlined text-[36px]">security</span>
+        </div>
+
+        <div>
+          <h3 class="font-heading font-bold text-base text-brand-dark">Verificação do Dispositivo</h3>
+          <p class="text-xs text-brand-secondary mt-1">
+            Para sua segurança e prova de vida, solicitamos a validação de biometria ou credenciais do seu dispositivo antes do pagamento.
+          </p>
+        </div>
+
+        <div id="security-support-box" class="w-full bg-gray-50 border border-brand-secondary/10 p-3 rounded-xl text-xs text-left flex items-start gap-2">
+          <span class="material-symbols-outlined text-brand-primary text-[18px] shrink-0 mt-0.5">info</span>
+          <span id="security-support-text" class="text-brand-secondary">
+            Verificando suporte a biometria/credenciais da plataforma...
+          </span>
+        </div>
+
+        <div class="flex flex-col w-full gap-2 mt-2">
+          <button id="verify-credentials-btn" class="w-full h-11 bg-brand-primary text-brand-dark font-heading font-bold text-xs rounded-xl flex items-center justify-center gap-2 shadow-sm active:scale-[0.98] transition-transform">
+            <span class="material-symbols-outlined text-[20px]">fingerprint</span>
+            <span>Validar Credenciais / Biometria</span>
+          </button>
+
+          <button id="skip-credentials-btn" class="w-full h-10 bg-transparent text-brand-secondary font-heading font-semibold text-xs rounded-xl hover:bg-gray-100 transition-colors">
+            Continuar sem Validação Biométrica
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIEW 4: SIMULATED PAYMENT GATEWAY (PAGAMENTO GENERICO) -->
+    <section id="view-payment" class="view-section hidden-view flex flex-col w-full px-4 pt-2">
+      <div class="flex items-center justify-between pb-3 border-b border-gray-100">
+        <h2 class="font-heading font-bold text-base text-brand-dark">Gateway de Pagamento (Simulação)</h2>
+        <span class="text-xs bg-brand-cream text-brand-secondary border border-brand-secondary/20 px-2 py-0.5 rounded font-medium">Ambiente de Teste</span>
+      </div>
+
+      <div class="mt-4 bg-white border border-brand-secondary/15 p-4 rounded-2xl shadow-sm flex flex-col gap-4">
+        <div class="flex items-center justify-between bg-brand-cream/60 p-3 rounded-xl">
+          <div class="flex flex-col">
+            <span class="text-xs text-brand-secondary">Valor a Pagar</span>
+            <span id="payment-amount-text" class="font-heading font-bold text-lg text-brand-dark">R$ 0,00</span>
+          </div>
+          <span class="material-symbols-outlined text-brand-primary text-[28px]">payments</span>
+        </div>
+
+        <div class="flex flex-col gap-2 text-xs">
+          <span class="font-semibold text-brand-dark">Escolha o resultado do teste de pagamento:</span>
+          <p class="text-brand-secondary text-[11px]">
+            Esta é uma simulação genérica de gateway. Selecione a opção desejada para prosseguir.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-2">
+          <button id="simulate-approve-btn" class="h-12 bg-emerald-600 hover:bg-emerald-700 text-white font-heading font-bold text-xs rounded-xl flex items-center justify-center gap-2 shadow-sm active:scale-[0.98] transition-transform">
+            <span class="material-symbols-outlined text-[20px]">check_circle</span>
+            <span>Aprovar Pagamento</span>
+          </button>
+
+          <button id="simulate-refuse-btn" class="h-12 bg-red-600 hover:bg-red-700 text-white font-heading font-bold text-xs rounded-xl flex items-center justify-center gap-2 shadow-sm active:scale-[0.98] transition-transform">
+            <span class="material-symbols-outlined text-[20px]">cancel</span>
+            <span>Recusar Pagamento</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIEW 5: ORDER SUCCESS & WHATSAPP (CONFIRMAÇÃO DO PEDIDO) -->
+    <section id="view-success" class="view-section hidden-view flex flex-col w-full px-4 pt-2">
+      <div class="bg-white border border-brand-secondary/15 p-5 rounded-2xl shadow-sm flex flex-col items-center text-center gap-4">
+        <div class="w-16 h-16 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center shadow-xs">
+          <span class="material-symbols-outlined text-[36px]">task_alt</span>
+        </div>
+
+        <div>
+          <span class="text-xs font-semibold uppercase text-emerald-700 tracking-wider">Pagamento Aprovado</span>
+          <h2 class="font-heading font-bold text-lg text-brand-dark mt-0.5">Pedido Realizado com Sucesso!</h2>
+          <p class="text-xs text-brand-secondary mt-1">
+            Seu pedido foi gerado. Clique no botão abaixo para enviar o resumo diretamente pelo WhatsApp do estabelecimento.
+          </p>
+        </div>
+
+        <div class="w-full bg-brand-cream/60 border border-brand-secondary/15 p-3.5 rounded-xl text-left text-xs flex flex-col gap-1.5">
+          <div class="flex justify-between font-semibold text-brand-dark">
+            <span>Número do Pedido:</span>
+            <span id="success-order-id" class="text-brand-secondary">#0000</span>
+          </div>
+          <div class="flex justify-between text-brand-secondary">
+            <span>Cliente:</span>
+            <span id="success-customer-name" class="font-medium text-brand-dark">-</span>
+          </div>
+          <div class="flex justify-between text-brand-secondary">
+            <span>Total Pago:</span>
+            <span id="success-order-total" class="font-bold text-emerald-700">-</span>
+          </div>
+        </div>
+
+        <a id="whatsapp-send-link" href="#" target="_blank" rel="noopener noreferrer" class="mt-2 w-full h-12 bg-emerald-600 hover:bg-emerald-700 text-white font-heading font-bold text-xs rounded-xl flex items-center justify-center gap-2 shadow-md active:scale-[0.98] transition-all">
+          <span class="material-symbols-outlined text-[22px]">chat</span>
+          <span>Enviar Pedido pelo WhatsApp</span>
+        </a>
+
+        <button class="back-to-menu-btn mt-2 text-xs text-brand-secondary hover:text-brand-dark font-semibold">
+          Fazer um novo pedido
+        </button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Bottom Navigation Bar -->
+  <nav class="fixed bottom-0 inset-x-0 z-50 pb-safe bg-white border-t border-brand-secondary/10 shadow-md">
+    <div class="max-w-md mx-auto flex justify-around items-center h-16 px-2">
+      <button class="nav-btn active flex flex-col items-center justify-center w-16 h-12 text-brand-primary font-bold transition-colors" data-view="view-menu">
+        <span class="material-symbols-outlined text-[22px]">menu_book</span>
+        <span class="text-[10px] mt-0.5 font-heading">Cardápio</span>
+      </button>
+
+      <button class="nav-btn flex flex-col items-center justify-center w-16 h-12 text-brand-secondary hover:text-brand-dark transition-colors relative" data-view="view-cart">
+        <span class="material-symbols-outlined text-[22px]">shopping_bag</span>
+        <span class="text-[10px] mt-0.5 font-heading">Carrinho</span>
+        <span id="nav-cart-badge" class="hidden absolute top-1 right-3 min-w-[1rem] h-4 px-1 rounded-full bg-brand-primary text-brand-dark font-heading text-[9px] font-bold items-center justify-center">0</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Toast Notification Feedback -->
+  <div id="toast-notify" class="fixed top-20 left-1/2 -translate-x-1/2 z-50 bg-brand-primary text-brand-dark font-heading font-bold text-xs px-4 py-2.5 rounded-full shadow-lg flex items-center gap-2 opacity-0 pointer-events-none transition-all duration-300 -translate-y-2">
+    <span class="material-symbols-outlined text-[18px]">check_circle</span>
+    <span id="toast-message">Item adicionado com sucesso!</span>
+  </div>
+
+  <!-- JavaScript Principal -->
+  <script src="js/app.js"></script>
+</body>
+</html>

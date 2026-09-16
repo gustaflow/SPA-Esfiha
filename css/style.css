@@ -1,0 +1,74 @@
+/* Custom CSS for SPA Esfiha */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
+:root {
+  --color-primary: #FAA901;
+  --color-secondary: #694807;
+  --color-tertiary: #FFFEE0;
+  --color-dark: #322303;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: var(--color-dark);
+  background-color: #FFFFFF;
+  overscroll-behavior: none;
+}
+
+h1, h2, h3, h4, h5, h6, .font-heading {
+  font-family: 'Poppins', sans-serif;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+.pt-safe {
+  padding-top: env(safe-area-inset-top, 0px);
+}
+
+/* Animations & Transitions */
+.view-section {
+  transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out;
+}
+
+.view-section.hidden-view {
+  display: none !important;
+  opacity: 0;
+  transform: translateY(12px);
+}
+
+.view-section.active-view {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 4px 16px rgba(250, 169, 1, 0.35);
+  }
+  50% {
+    box-shadow: 0 6px 24px rgba(250, 169, 1, 0.6);
+  }
+}
+
+.glow-btn {
+  animation: pulseGlow 3s infinite;
+}
+
+/* Modal animation */
+.modal-overlay {
+  transition: opacity 0.2s ease-in-out;
+}
+
+.modal-container {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}

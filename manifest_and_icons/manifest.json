@@ -14,12 +14,6 @@
   "icons": [
     {
       "src": "/SPA-Esfiha/manifest_and_icons/sfiha.png",
-      "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any maskable"
-    },
-    {
-      "src": "/SPA-Esfiha/manifest_and_icons/icon-512_maskable.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
